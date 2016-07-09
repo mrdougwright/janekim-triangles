@@ -1,11 +1,39 @@
 <html>
 <head>
 <style>
-  .example_tree li span {
+  .example_tree ul {
+    margin: 0.75em 0;
+    padding: 0 1em;
+    list-style: none;
+  }
+  .example_tree li.question {
     cursor: pointer;
   }
-  .example_tree li ul li {
-    list-style: none;
+
+  .example_tree li.question:before {
+    content: "";
+    border-color: transparent #111;
+    border-style: solid;
+    border-width: 0.35em 0 0.35em 0.7em;
+    display: block;
+    height: 0;
+    width: 0;
+    left: -1em;
+    top: 0.9em;
+    position: relative;
+  }
+
+ .example_tree li.question.downarrow:before {
+    content: "";
+    border-color: transparent #111;
+    border-style: solid;
+    border-width: 0.45em 0.35em 0.35em 0;
+    display: block;
+    height: 0;
+    width: 0;
+    left: -1em;
+    top: 0.9em;
+    position: relative;
   }
 </style>
 
@@ -14,8 +42,9 @@
 <script type="text/javascript">
 $(function(){
   $('#example_tree li ul').hide();
-  $('#example_tree').find('SPAN').click(function(e){
-    $(this).parent().children('UL').toggle();
+  $('.question').click(function(e){
+    $(this).children('ul').toggle();
+    $(this).toggleClass('downarrow');
 });
 });
 </script>
@@ -24,35 +53,35 @@ $(function(){
 
 <div id="example_tree" class="example_tree">
   <ul>
-    <li><span>Do you have practice tests?</span>
+    <li class='question'><span>Do you have practice tests?</span>
       <ul>
         <li><span>Practice tests for our Versant English, Spanish, Aviation English, and other tests are available online for purchase <a href="/ecom/products">here</a>.</span></li>
       </ul>
     </li>
   </ul>
   <ul>
-  <li><span>Can I retest with a same Test Identification Number (TIN)?</span>
+  <li class='question'><span>Can I retest with a same Test Identification Number (TIN)?</span>
   <ul>
   <li><span>Once you make an attempt to use your TIN it cannot be used again.</span></li>
   </ul>
   </li>
   </ul>
   <ul>
-  <li><span>When is a TIN considered "used"?</span>
+  <li class='question'><span>When is a TIN considered "used"?</span>
   <ul>
   <li><span>A test is considered used after the test taker says his/her name. If a test taker attempts to take the test again, they will receive an error message and will be unable to take the test.</span></li>
   </ul>
   </li>
   </ul>
   <ul>
-  <li><span>I lost my TIN. How do I get a new one?</span>
+  <li class='question'><span>I lost my TIN. How do I get a new one?</span>
   <ul>
   <li><span>You will need to contact the person who administered your test. The test administrator will determine if another test can be distributed.</span></li>
   </ul>
   </li>
   </ul>
   <ul>
-  <li><span>How do I properly take a test?</span>
+  <li class='question'><span>How do I properly take a test?</span>
   <ul>
   <li><span>Read through the test instructions before beginning your test. For speaking tests, be sure to speak in a loud and steady voice directly into a land line telephone (or microphone if you are taking the test on a computer). For writing tests, be sure to familiarize yourself with the keyboard. Take the test in a quiet location where you will not be interrupted.</span></li>
   </ul>
@@ -60,28 +89,28 @@ $(function(){
   </ul>
   <h2><span id="hs_cos_wrapper_module_13885046520011784" class="hs_cos_wrapper hs_cos_wrapper_widget_container hs_cos_wrapper_type_widget_container" data-hs-cos-general-type="widget_container" data-hs-cos-type="widget_container">Getting and Viewing Scores</span></h2>
   <ul>
-  <li><span>How do I get my score?</span>
+  <li class='question'><span>How do I get my score?</span>
   <ul>
   <li><span>Each test has a unique Test Identification Number (TIN) in the upper right corner of the test paper. After locating that number, go to the Score Lookup area of our website and click on "Get Score". Enter your Test Identification Number in the space provided to retrieve your score report. If you have a ScoreKeeper account you may log in to view your score. </span></li>
   </ul>
   </li>
   </ul>
   <ul>
-  <li><span>How long does it take to get a score?</span>
+  <li class='question'><span>How long does it take to get a score?</span>
   <ul>
   <li><span>Scores are usually available online within minutes of completing the test. </span></li>
   </ul>
   </li>
   </ul>
   <ul>
-  <li><span>When I enter in my TIN on the phone, why does the recording say it is invalid?</span>
+  <li class='question'><span>When I enter in my TIN on the phone, why does the recording say it is invalid?</span>
   <ul>
-  <li><span>Please try entering your TIN again to ensure that you have entered it correctly. If you repeatedly hear the same error message, your test TIN may have been already used. Please contact your test administrator for details and further instructions. </span></li>
+  <li class='question'><span>Please try entering your TIN again to ensure that you have entered it correctly. If you repeatedly hear the same error message, your test TIN may have been already used. Please contact your test administrator for details and further instructions. </span></li>
   </ul>
   </li>
   </ul>
   <ul>
-  <li><span>Why is there an error message when I try to get my test score?</span>
+  <li class='question'><span>Why is there an error message when I try to get my test score?</span>
   <ul>
   <li><span>Your test administrator may have restricted you from retrieving your score. Since Pearson did not administer your test, we are unable to provide you a score directly. Please contact your test administrator in order to obtain your score.</span></li>
   </ul>

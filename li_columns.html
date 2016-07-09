@@ -2,6 +2,7 @@
 <head>
 <style>
   .example_tree ul {
+    color: #20348D;
     margin: 0.75em 0;
     padding: 0 1em;
     list-style: none;
@@ -11,30 +12,30 @@
   }
 
   .example_tree li.question:before {
-    content: "";
-    border-color: transparent #111;
-    border-style: solid;
-    border-width: 0.35em 0 0.35em 0.7em;
+    content: "";/*url("https://www.versanttest.com/images/web/arrow-rt.gif");*/
+    position: relative;
     display: block;
     height: 0;
     width: 0;
     left: -1em;
-    top: 0.9em;
-    position: relative;
+    top: 0.8em;
+    border-top: 0.3em solid transparent;
+    border-bottom: 0.3em solid transparent;
+    border-left: 0.6em solid #20348D;
   }
 
  .example_tree li.question.downarrow:before {
-    content: "";
-    border-color: transparent #111;
-    border-style: solid;
-    border-width: 0.45em 0.35em 0.35em 0;
+    content: ""; /*url("https://www.versanttest.com/images/web/arrow-dn.gif");*/
+    position: relative;
     display: block;
     height: 0;
     width: 0;
     left: -1em;
-    top: 0.9em;
-    position: relative;
-  }
+    top: 0.8em;
+    border-left: 0.3em solid transparent;
+    border-right: 0.3em solid transparent;
+    border-top: 0.6em solid #20348D;
+ }
 </style>
 
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
